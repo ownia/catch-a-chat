@@ -24,8 +24,8 @@ def index():
 def login():
     form = LoginForm()
     # form.validate_on_submit()方法解决了所有的表单处理工作
-    # 如果浏览器发送了GET请求需要接收一个有表单的web页面, 这个方法就会返回False
-    # 这样视图函数就会跳过if语句, 直接执行最后一条语句来渲染页面返回
+    # 如果浏览器发送了GET请求需要接收一个有表单的web页面,这个方法就会返回False
+    # 这样视图函数就会跳过if语句,直接执行最后一条语句来渲染页面返回
     if form.validate_on_submit():
         flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
         return redirect(url_for('index'))
