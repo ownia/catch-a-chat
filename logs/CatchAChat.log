@@ -79,3 +79,4 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2019-06-01 10:45:06,402 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
 2019-06-01 10:47:10,601 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
 2019-06-01 10:48:15,711 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
+2019-06-01 21:20:21,824 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:50]
