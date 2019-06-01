@@ -18,3 +18,5 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['o451686892@outlook.com']
+    # POSTS_PER_PAGE决定了每次返回文章列表的条目数
+    POSTS_PER_PAGE = 10
