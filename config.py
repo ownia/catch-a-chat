@@ -20,3 +20,5 @@ class Config(object):
     ADMINS = ['o451686892@outlook.com']
     # POSTS_PER_PAGE决定了每次返回文章列表的条目数
     POSTS_PER_PAGE = 10
+    # list of tracked language
+    LANGUAGES = ['en', 'zh']
