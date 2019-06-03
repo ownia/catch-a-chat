@@ -21,3 +21,9 @@ Traceback (most recent call last):
   File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\googletrans\client.py", line 154, in translate
     raise ValueError('invalid source language')
 ValueError: invalid source language
+2019-06-03 14:43:21,710 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 14:43:27,920 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 14:43:36,171 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 14:43:49,324 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 14:57:09,130 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 14:57:12,776 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
