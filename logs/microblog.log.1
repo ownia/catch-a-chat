@@ -1,0 +1,125 @@
+2019-06-03 10:49:44,138 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 10:49:52,659 ERROR: Exception on /search [GET] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\main\routes.py", line 130, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\search.py", line 25, in query_index
+    'size': per_page})
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+TypeError: search() got an unexpected keyword argument 'doc_type'
+2019-06-03 10:49:57,053 ERROR: Exception on /search [GET] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\main\routes.py", line 130, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\search.py", line 25, in query_index
+    'size': per_page})
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+TypeError: search() got an unexpected keyword argument 'doc_type'
+2019-06-03 10:50:12,629 ERROR: Exception on /search [GET] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\main\routes.py", line 130, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\search.py", line 25, in query_index
+    'size': per_page})
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+TypeError: search() got an unexpected keyword argument 'doc_type'
+2019-06-03 10:50:25,361 ERROR: Exception on /search [GET] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\main\routes.py", line 130, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\search.py", line 25, in query_index
+    'size': per_page})
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+TypeError: search() got an unexpected keyword argument 'doc_type'
+2019-06-03 14:34:06,228 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:82]
+2019-06-03 14:36:15,059 ERROR: Exception on /translate [POST] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\main\routes.py", line 120, in translate_text
+    {'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])})
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\translate.py", line 6, in translate
+    text = translator.translate(trans, src=src_lan, dest=dest_lan).text
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\googletrans\client.py", line 154, in translate
+    raise ValueError('invalid source language')
+ValueError: invalid source language
