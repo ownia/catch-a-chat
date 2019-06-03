@@ -24,3 +24,6 @@ class Config(object):
     POSTS_PER_PAGE = 10
     # list of tracked language
     LANGUAGES = ['en', 'zh']
+    # 配置Elasticsearch
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+
