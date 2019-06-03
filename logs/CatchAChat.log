@@ -1,13 +1,4 @@
-2019-05-31 20:40:36,417 ERROR: Exception on /edit_profile [POST] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
-Traceback (most recent call last):
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2019-06-03 08:42:38,728 ERROR: Exception on /translate [POST] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
 Traceback (most recent call last):
   File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,63 +14,34 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\o4516\PycharmProjects\catchachat\app\routes.py", line 96, in edit_profile
-    db.session.commit()
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1026, in commit
-    self.transaction.commit()
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\session.py", line 493, in commit
-    self._prepare_impl()
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\session.py", line 472, in _prepare_impl
-    self.session.flush()
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2458, in flush
-    self._flush(objects)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2596, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\util\compat.py", line 129, in reraise
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\routes.py", line 191, in translate_text
+    {'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])})
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\translate.py", line 6, in translate
+    text = translator.translate(trans, src=src_lan, dest=dest_lan).text
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\googletrans\client.py", line 154, in translate
+    raise ValueError('invalid source language')
+ValueError: invalid source language
+2019-06-03 08:42:42,956 ERROR: Exception on /translate [POST] [in c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
     raise value
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2556, in _flush
-    flush_context.execute()
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
-    uow,
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
-    update,
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 978, in _emit_update_statements
-    statement, multiparams
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\sqlalchemy\engine\default.py", line 550, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('ame1', '', 5)]
-(Background on this error at: http://sqlalche.me/e/gkpj)
-2019-05-31 20:59:14,641 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
-2019-05-31 21:00:38,182 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
-2019-06-01 10:44:14,683 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
-2019-06-01 10:45:06,402 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
-2019-06-01 10:47:10,601 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
-2019-06-01 10:48:15,711 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:47]
-2019-06-01 21:20:21,824 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:50]
-2019-06-01 21:45:57,327 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:54]
-2019-06-02 16:56:41,957 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:54]
-2019-06-02 16:57:02,004 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:54]
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\routes.py", line 191, in translate_text
+    {'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])})
+  File "C:\Users\o4516\PycharmProjects\catchachat\app\translate.py", line 6, in translate
+    text = translator.translate(trans, src=src_lan, dest=dest_lan).text
+  File "c:\users\o4516\pycharmprojects\catchachat\venv\lib\site-packages\googletrans\client.py", line 154, in translate
+    raise ValueError('invalid source language')
+ValueError: invalid source language
+2019-06-03 08:43:33,096 INFO: CatchAChat startup [in C:\Users\o4516\PycharmProjects\catchachat\app\__init__.py:61]
