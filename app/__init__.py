@@ -1,4 +1,4 @@
-from flask import Flask, current_app, request
+from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -13,6 +13,7 @@ from flask_babel import Babel, lazy_gettext as _l
 from elasticsearch import Elasticsearch
 from redis import Redis
 import rq
+from flask_admin import Admin
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -29,6 +30,8 @@ moment = Moment()
 
 babel = Babel()
 
+admin = Admin()
+
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -44,6 +47,7 @@ def create_app(config_class=Config):
     app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) if app.config['ELASTICSEARCH_URL'] else None
     app.redis = Redis.from_url(app.config['REDIS_URL'])
     app.task_queue = rq.Queue('catchachat-tasks', connection=app.redis)
+    admin.init_app(app)
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
