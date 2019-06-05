@@ -188,3 +188,9 @@ def export_posts():
         current_user.launch_task('export_posts', _('Exporting posts...'))
         db.session.commit()
     return redirect(url_for('main.user', username=current_user.username))
+
+
+@bp.route('/api')
+@login_required
+def api():
+    return render_template('api.html', title=_('API'))

@@ -6,6 +6,7 @@ from flask_babel import _, lazy_gettext as _l
 from app.models import User
 
 
+# 编辑个人信息表单
 # validators用来给字段附加验证行为
 # DataRequired验证器检查提交的字段是否为空
 class EditProfileForm(FlaskForm):
@@ -26,11 +27,13 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError(_('Please use a different username.'))
 
 
+# 发表文章表单
 class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
 
 
+# 搜索表单
 class SearchForm(FlaskForm):
     q = StringField(_l('Search'), validators=[DataRequired()])
 
@@ -42,6 +45,7 @@ class SearchForm(FlaskForm):
         super(SearchForm, self).__init__(*args, **kwargs)
 
 
+# 私信表单
 class MessageForm(FlaskForm):
     message = TextAreaField(_l('Message'), validators=[DataRequired(), Length(min=0, max=140)])
     submit = SubmitField(_l('Submit'))

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    table td, table th {
+        border: 1px solid #cad9ea;
+        color: #666;
+        height: 30px;
+    }
+
+    table thead th {
+        background-color: #CCE8EB;
+        width: 200px;
+        text-align: center;
+    }
+
+    table tr:nth-child(odd) {
+        background: #fff;
+    }
+
+    table tr:nth-child(even) {
+        background: #F5FAFA;
+    }
+</style>
+<h2>{{ _('CatchAChat support Application Programming Interfaces') }}<br><br></h2>
+<table>
+    <thead>
+    <tr>
+        <th>HTTP Method</th>
+        <th>Resource URL</th>
+        <th>Notes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>GET</code></td>
+        <td><em>/api/users/&lt;id&gt;</em></td>
+        <td>Return a user.</td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td><em>/api/users</em></td>
+        <td>Return the collection of all users.</td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td><em>/api/users/&lt;id&gt;/followers</em></td>
+        <td>Return the followers of this user.</td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td><em>/api/users/&lt;id&gt;/followed</em></td>
+        <td>Return the users this user is following.</td>
+    </tr>
+    <tr>
+        <td><code>POST</code></td>
+        <td><em>/api/users</em></td>
+        <td>Register a new user account.</td>
+    </tr>
+    <tr>
+        <td><code>PUT</code></td>
+        <td><em>/api/users/&lt;id&gt;</em></td>
+        <td>Modify a user.</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock %}
