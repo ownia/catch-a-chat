@@ -74,7 +74,7 @@ def create_app(config_class=Config):
             mail_handler = SMTPHandler(
                 mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
                 fromaddr='no-reply@' + app.config['MAIL_SERVER'],
-                toaddrs=app.config['ADMINS'], subject='Microblog Failure',
+                toaddrs=app.config['ADMINS'], subject='CatchAChat Failure',
                 credentials=auth, secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
@@ -82,7 +82,7 @@ def create_app(config_class=Config):
         if not os.path.exists('logs'):
             os.mkdir('logs')
         # RotatingFileHandler类可以确保日志文件不会因为长时间运行应用变的特别大
-        file_handler = RotatingFileHandler('logs/ChatAChat.log', maxBytes=10240, backupCount=10)
+        file_handler = RotatingFileHandler('logs/CatchAChat.log', maxBytes=10240, backupCount=10)
         # logging.Formatter提供了日志消息的自定义格式
         file_handler.setFormatter(
             logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
