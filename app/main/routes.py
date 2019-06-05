@@ -8,6 +8,7 @@ from app.main.forms import EditProfileForm, PostForm, SearchForm, MessageForm
 from app.models import User, Post, Message, Notification
 from app.translate import translate
 from app.main import bp
+from langdetect import detect
 
 
 @bp.route('/', methods=['GET', 'POST'])
@@ -16,7 +17,7 @@ from app.main import bp
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        language = guess_language(form.post.data)
+        language = detect(form.post.data)
         if language == 'UNKNOWN' or len(language) > 5:
             language = ''
         post = Post(body=form.post.data, author=current_user, language=language)

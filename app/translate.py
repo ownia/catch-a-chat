@@ -1,4 +1,4 @@
-from googletrans import Translator
+# from googletrans import Translator
 import json
 import requests
 
