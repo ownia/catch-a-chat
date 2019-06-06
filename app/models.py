@@ -5,13 +5,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from hashlib import md5
 from time import time
 import jwt
-from flask import current_app, url_for
+from flask import current_app, url_for, redirect, request
 from app.search import add_to_index, remove_from_index, query_index
 import json
 import rq
 import redis
 import base64
 import os
+from app import admin, db
+from flask_admin.contrib.sqla import ModelView
+from flask_login import current_user
+from flask_admin.menu import MenuLink
+from redis import Redis
+from flask_admin.contrib import rediscli
+from flask_admin.contrib.fileadmin import FileAdmin
+import os.path as op
 
 
 class SearchableMixin(object):
@@ -279,3 +287,35 @@ class Task(db.Model):
     def get_progress(self):
         job = self.get_rq_job()
         return job.meta.get('progress', 0) if job is not None else 100
+
+
+class PostModelView(ModelView):
+    template_mode = 'bootstrap3'
+    can_delete = False  # disable model deletion
+    page_size = 10  # the number of entries to display on the list view
+
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+    def inaccessible_callback(self, name, **kwargs):
+        # redirect to login page if user doesn't have access
+        return redirect(url_for('auth.login', next=request.url))
+
+
+class UserModelView(PostModelView):
+    column_exclude_list = ([2])
+
+
+class PostView(PostModelView):
+    column_exclude_list = (['language'])
+
+
+admin.add_view(PostView(Post, db.session, category='Database'))
+admin.add_view(UserModelView(User, db.session, category='Database'))
+admin.add_view(PostModelView(Message, db.session, category='Database'))
+admin.add_view(PostModelView(Notification, db.session, category='Database'))
+admin.add_view(PostModelView(Task, db.session, category='Database'))
+admin.add_link(MenuLink(name='Home Page', url='/'))
+admin.add_view(rediscli.RedisCli(Redis(), name='Redis'))
+path = op.join(op.dirname(__file__), 'static')
+admin.add_view(FileAdmin(path, '/static/', name='Static Files'))
