@@ -30,9 +30,9 @@
 </style>
 
 <h2>{{ _('CatchAChat supports Application Programming Interfaces') }}<br><br></h2>
-    <h1>{{ users_sum.id }}</h1>
 
-<table>
+<div >
+<table class="right">
     <thead>
     <tr>
         <th>HTTP Method</th>
@@ -73,4 +73,7 @@
     </tr>
     </tbody>
 </table>
+    <p ><br><br>{{ _('total number of site users: ') }} {{ users_sum.id }}</p>
+    <p >{{ _('total number of site posts: ') }} {{ posts_sum.id }}</p>
+</div>
 {% endblock %}

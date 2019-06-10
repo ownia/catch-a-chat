@@ -163,20 +163,20 @@ def messages():
     current_user.add_notification('unread_message_count', 0)
     db.session.commit()
     page = request.args.get('page', 1, type=int)
-    messages = current_user.messages_received.order_by(Message.timestamp.desc()).paginate(page, current_app.config[
+    message = current_user.messages_received.order_by(Message.timestamp.desc()).paginate(page, current_app.config[
         'POSTS_PER_PAGE'], False)
-    next_url = url_for('main.messages', page=messages.next_num) if messages.has_next else None
-    prev_url = url_for('main.messages', page=messages.prev_num) if messages.has_prev else None
-    return render_template('messages.html', messages=messages.items, next_url=next_url, prev_url=prev_url)
+    next_url = url_for('main.messages', page=message.next_num) if message.has_next else None
+    prev_url = url_for('main.messages', page=message.prev_num) if message.has_prev else None
+    return render_template('messages.html', messages=message.items, next_url=next_url, prev_url=prev_url)
 
 
 @bp.route('/notifications')
 @login_required
 def notifications():
     since = request.args.get('since', 0.0, type=float)
-    notifications = current_user.notifications.filter(Notification.timestamp > since).order_by(
+    notification = current_user.notifications.filter(Notification.timestamp > since).order_by(
         Notification.timestamp.asc())
-    return jsonify([{'name': n.name, 'data': n.get_data(), 'timestamp': n.timestamp} for n in notifications])
+    return jsonify([{'name': n.name, 'data': n.get_data(), 'timestamp': n.timestamp} for n in notification])
 
 
 @bp.route('/export_posts')
@@ -194,4 +194,5 @@ def export_posts():
 @login_required
 def api():
     users_sum = User.query.order_by(User.id.desc()).first_or_404()
-    return render_template('api.html', title=_('API'), users_sum=users_sum)
+    posts_sum = Post.query.order_by(Post.id.desc()).first_or_404()
+    return render_template('api.html', title=_('API'), users_sum=users_sum, posts_sum=posts_sum)
