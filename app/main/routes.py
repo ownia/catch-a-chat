@@ -193,4 +193,5 @@ def export_posts():
 @bp.route('/api')
 @login_required
 def api():
-    return render_template('api.html', title=_('API'))
+    users_sum = User.query.order_by(User.id.desc()).first_or_404()
+    return render_template('api.html', title=_('API'), users_sum=users_sum)

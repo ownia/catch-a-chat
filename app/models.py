@@ -289,10 +289,11 @@ class Task(db.Model):
         return job.meta.get('progress', 0) if job is not None else 100
 
 
-class PostModelView(ModelView):
+class MyModelView(ModelView):
     template_mode = 'bootstrap3'
     can_delete = False  # disable model deletion
     page_size = 10  # the number of entries to display on the list view
+    can_export = True
 
     def is_accessible(self):
         return current_user.is_authenticated
@@ -302,19 +303,19 @@ class PostModelView(ModelView):
         return redirect(url_for('auth.login', next=request.url))
 
 
-class UserModelView(PostModelView):
-    column_exclude_list = ([2])
+class UserModelView(MyModelView):
+    column_exclude_list = (['Password Hash'])
 
 
-class PostView(PostModelView):
+class PostView(MyModelView):
     column_exclude_list = (['language'])
 
 
 admin.add_view(PostView(Post, db.session, category='Database'))
 admin.add_view(UserModelView(User, db.session, category='Database'))
-admin.add_view(PostModelView(Message, db.session, category='Database'))
-admin.add_view(PostModelView(Notification, db.session, category='Database'))
-admin.add_view(PostModelView(Task, db.session, category='Database'))
+admin.add_view(MyModelView(Message, db.session, category='Database'))
+admin.add_view(MyModelView(Notification, db.session, category='Database'))
+admin.add_view(MyModelView(Task, db.session, category='Database'))
 admin.add_link(MenuLink(name='Home Page', url='/'))
 admin.add_view(rediscli.RedisCli(Redis(), name='Redis'))
 path = op.join(op.dirname(__file__), 'static')
