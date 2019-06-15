@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="a0b09b17-be90-4047-8ee8-f7e371dd3f86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/catchachat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/catchachat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -8,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
     </list>
+=======
+    <list default="true" id="a0b09b17-be90-4047-8ee8-f7e371dd3f86" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -388,7 +392,7 @@
       <workItem from="1560342851078" duration="2394000" />
       <workItem from="1560348786313" duration="98000" />
       <workItem from="1560430051119" duration="14000" />
-      <workItem from="1560570051322" duration="1504000" />
+      <workItem from="1560570051322" duration="2234000" />
     </task>
     <servers />
   </component>
@@ -404,7 +408,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149606000" />
+    <option name="totallyTimeSpent" value="150336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,7 +420,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-1" y="0" width="1922" height="1027" extended-state="6" />
+=======
+    <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
+>>>>>>> Stashed changes
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.2168421" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20844504" />
