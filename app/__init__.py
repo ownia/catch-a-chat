@@ -13,7 +13,7 @@ from flask_babel import Babel, lazy_gettext as _l
 from elasticsearch import Elasticsearch
 from redis import Redis
 import rq
-from flask_admin import Admin,AdminIndexView
+from flask_admin import Admin, AdminIndexView
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -42,6 +42,7 @@ def create_app(config_class=Config):
     login.init_app(app)
     mail.init_app(app)
     bootstrap.init_app(app)
+
     moment.init_app(app)
     babel.init_app(app)
     app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) if app.config['ELASTICSEARCH_URL'] else None

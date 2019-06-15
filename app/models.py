@@ -1,3 +1,4 @@
+# define the structure of the database
 from app import db, login
 from datetime import datetime, timedelta
 from flask_login import UserMixin
