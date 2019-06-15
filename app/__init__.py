@@ -1,3 +1,4 @@
+# coding=UTF-8
 from flask import Flask, request, current_app
 from config import Config
 from flask_sqlalchemy import SQLAlchemy

@@ -1,3 +1,4 @@
+# coding=UTF-8
 from app import db, cli, create_app
 from app.models import User, Post, Message, Notification, Task
 

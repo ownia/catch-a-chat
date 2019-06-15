@@ -1,3 +1,4 @@
+# coding=UTF-8
 # 用户登录表单
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField

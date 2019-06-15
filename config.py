@@ -1,3 +1,4 @@
+# coding=UTF-8
 # 配置
 import os
 from dotenv import load_dotenv
