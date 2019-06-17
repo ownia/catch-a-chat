@@ -121,6 +121,15 @@ def translate_text():
         {'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])})
 
 
+@bp.route('/querysearch')
+@login_required
+def querysearch():
+    if not g.search_form.validate():
+        return redirect(url_for('main.explore'))
+    posts = Post.query.filter(Post.body.ilike('%' + g.search_form.q.data + '%')).order_by(Post.timestamp.desc())
+    return render_template('search.html', title=_('Search'), posts=posts)
+
+
 @bp.route('/search')
 @login_required
 def search():
