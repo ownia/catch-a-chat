@@ -153,11 +153,9 @@ def send_message(recipient):
         db.session.commit()
         flash(_('Your message has been sent.'))
         return redirect(url_for('main.user', username=recipient))
-    page = request.args.get('page', 1, type=int)
-    message = current_user.messages_received.filter_by(username=recipient).messages_received.order_by(Message.timestamp.desc()).paginate(page, current_app.config[
-        'POSTS_PER_PAGE'], False)
+    message = user.messages_sent.filter_by(recipient_id=current_user.id).order_by(Message.timestamp.desc())
     return render_template('send_message.html', title=_('Send Message'), form=form, recipient=recipient,
-                           messages=message.items)
+                           messages=message)
 
 
 @bp.route('/messages')
