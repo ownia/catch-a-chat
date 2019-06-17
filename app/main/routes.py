@@ -153,7 +153,8 @@ def send_message(recipient):
         db.session.commit()
         flash(_('Your message has been sent.'))
         return redirect(url_for('main.user', username=recipient))
-    message = user.messages_sent.filter_by(recipient_id=current_user.id).order_by(Message.timestamp.desc())
+    own = user.messages_received.filter_by(sender_id=current_user.id)
+    message = user.messages_sent.filter_by(recipient_id=current_user.id).union(own).order_by(Message.timestamp.desc())
     return render_template('send_message.html', title=_('Send Message'), form=form, recipient=recipient,
                            messages=message)
 
