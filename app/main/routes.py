@@ -126,7 +126,7 @@ def translate_text():
 def querysearch():
     if not g.search_form.validate():
         return redirect(url_for('main.explore'))
-    posts = Post.query.filter(Post.body.ilike('%' + g.search_form.q.data + '%')).order_by(Post.timestamp.desc())
+    posts = Post.query.filter(Post.body.like('%' + g.search_form.q.data + '%')).order_by(Post.timestamp.desc())
     return render_template('search.html', title=_('Search'), posts=posts)
 
 

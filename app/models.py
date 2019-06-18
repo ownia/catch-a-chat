@@ -62,8 +62,8 @@ class SearchableMixin(object):
             add_to_index(cls.__tablename__, obj)
 
 
-db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit, propagate=True)
-db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit, propagate=True)
+# db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit, propagate=True)
+# db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit, propagate=True)
 
 followers = db.Table('followers',
                      db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
