@@ -22,7 +22,7 @@ Flask-SQLAlchemy==2.4.0
 Flask-WTF==0.14.2
 googletrans==2.4.0
 guess-language-spirit==0.5.3
-httpie==1.0.2
+httpie==1.0.3
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10.1
